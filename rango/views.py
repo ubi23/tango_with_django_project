@@ -30,7 +30,7 @@ def show_category(request, category_name_slug):
         # Can we find a category name slug with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
         # So the .get() method returns one model instance or raises an exception.
-        category = Category.objects.filter(slug=category_name_slug)
+        category = Category.objects.get(slug=category_name_slug)
 
         pages = Page.objects.filter(category=category)
         # Adds our result list to the template context under name pages.

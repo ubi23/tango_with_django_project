@@ -3,3 +3,11 @@ db.sqlite3
 
 # ignore all .pyc files
 *.pyc
+
+# ignore .txt files
+*.txt
+
+# ignore tests files
+decorators.py
+test_utils.py
+tests_*.py
