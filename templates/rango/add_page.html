@@ -2,9 +2,11 @@
 
 
 {% block title_block %}
+    Add a Page
 {% endblock %}
 
 {% block body_block %}
+{% if user.is_authenticated %}
     {% if category %}
         <h1>Add a Page to {{ category.name }}</h1>
         <form id="page_form" method="post" action="/rango/category/{{category.slug}}/add_page/">
@@ -23,5 +25,8 @@
     {% else %}
         A category by this name does not exist
     {% endif %}
+{% else %}
+    You are not logged in, please log in.
+{% endif %}
 {% endblock %}
    
